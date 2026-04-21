@@ -1,5 +1,6 @@
 Simple Ox Lib Redesign
 All UI functions redesigned.
+Use Config.lua to update ox lib banner image
 
 # ox_lib
 
