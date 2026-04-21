@@ -14,14 +14,9 @@ For guidelines to contributing to the project, and to see our Contributor Licens
 
 For additional legal notices, refer to [NOTICE.md](./NOTICE.md).
 
-
 ## 📚 Documentation
 
 https://coxdocs.dev/ox_lib
-
-## 💾 Download
-
-https://github.com/communityox/ox_lib/releases/latest/download/ox_lib.zip
 
 ## 📦 npm package
 
