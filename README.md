@@ -1,4 +1,5 @@
-<img width="299" height="201" alt="image" src="https://github.com/user-attachments/assets/b2557cef-7630-4249-9dcc-02f401e83b03" /># Simple Ox Lib Redesign
+<img width="494" height="686" alt="image" src="https://github.com/user-attachments/assets/008a0ed2-d7f4-4c6c-b22a-a7d565742e93" />
+
 # All UI functions redesigned.
 # Use Config.lua to update ox lib banner image
 
