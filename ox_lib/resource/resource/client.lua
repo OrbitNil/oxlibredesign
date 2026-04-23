@@ -42,11 +42,58 @@ local function resolveTitlePrefix()
     return defaultTitlePrefix
 end
 
+---@param v any
+---@return string|nil
+local function normalizeHex(v)
+    if type(v) ~= 'string' then return nil end
+    local s = (v:match('^%s*(.-)%s*$') or '')
+    if s == '' then return nil end
+    if s:sub(1, 1) ~= '#' then s = '#' .. s end
+    return s
+end
+
+local function resolvePrimaryColorHex()
+    local o = rawget(_G, 'OxLib') or {}
+    return normalizeHex(o.primaryColorHex)
+end
+
+local function resolveSecondaryColorHex()
+    local o = rawget(_G, 'OxLib') or {}
+    return normalizeHex(o.secondaryColorHex)
+end
+
+--- 0–1 panel alpha scale; also accepts 1–100 as percent (e.g. 85 → 0.85).
+---@return number|nil
+local function resolvePrimaryOpacity()
+    local o = rawget(_G, 'OxLib') or {}
+    local v = o.primaryOpacity
+    if type(v) ~= 'number' or v ~= v then return nil end
+    if v > 1 then v = v / 100 end
+    if v < 0 then v = 0 end
+    if v > 1 then v = 1 end
+    return v
+end
+
+--- 0–100: 0 = grey panels, 100 = full saturation of primaryColorHex.
+---@return number|nil
+local function resolvePrimaryStrength()
+    local o = rawget(_G, 'OxLib') or {}
+    local v = o.primaryStrength
+    if type(v) ~= 'number' or v ~= v then return nil end
+    if v < 0 then v = 0 end
+    if v > 100 then v = 100 end
+    return v
+end
+
 RegisterNUICallback('getConfig', function(_, cb)
     cb({
         primaryColor = GetConvar('ox:primaryColor', 'blue'),
         primaryShade = GetConvarInt('ox:primaryShade', 8),
         menuBannerImage = resolveMenuBanner(),
         menuTitlePrefix = resolveTitlePrefix(),
+        primaryColorHex = resolvePrimaryColorHex(),
+        secondaryColorHex = resolveSecondaryColorHex(),
+        primaryOpacity = resolvePrimaryOpacity(),
+        primaryStrength = resolvePrimaryStrength(),
     })
 end)
