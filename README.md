@@ -2,6 +2,7 @@
 
 # All UI functions redesigned.
 # Use Config.lua to update ox lib banner image
+# Use config.lua to update theme
 
 # PREVIEW
 https://ibb.co/nqWwZ50V
