@@ -6,7 +6,7 @@ OxLib = OxLib or {}
  -- OxLib.primaryOpacity = 0.80
  -- OxLib.primaryStrength = 70
 
--- Edit this to your banner URL (https:// or nui://).
+-- Edit this to your banner URL (https://).
 local defaultBanner =
     'https://r2.fivemanage.com/6bOfDKDUbz71P2aZ6roWw/ChatGPTImageApr21202601_53_45AM(1).png'
 
